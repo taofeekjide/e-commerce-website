@@ -9,8 +9,9 @@ class Cart {
   }
 
   #loadFromStorage() {
-    this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey));
+    this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey)) || [];
 
+    /*
     if (!this.cartItems) {
       this.cartItems = [
         {
@@ -25,6 +26,7 @@ class Cart {
         },
       ];
     }
+    */
   }
 
   saveToLocalstorage() {
